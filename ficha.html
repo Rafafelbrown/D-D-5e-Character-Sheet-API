@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ficha D&D 5e</title>
+<title>D&D 5e Character Sheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -239,7 +240,7 @@
     line-height: 1.5;
   }
 
-  /* ── Stat box (atributos) ─────────────────────────────────────── */
+  /* ── Stat box (attributes) ─────────────────────────────────────── */
   .stat-box {
     background: linear-gradient(160deg, #fff8ec 0%, #ecdfc0 100%);
     border: 1.5px solid var(--parch-edge);
@@ -543,252 +544,225 @@
 <body>
 <div class="shell">
 
-  <!-- Header -->
   <header>
     <div class="header-dragon">🐉</div>
-    <h1>Ficha de Personagem</h1>
-    <p class="subtitle">Dungeons &amp; Dragons — 5ª Edição</p>
+    <h1>Character Sheet</h1>
+    <p class="subtitle">Dungeons &amp; Dragons — 5th Edition</p>
   </header>
 
-  <!-- API config -->
   <div class="api-bar">
-    <label>URL DA API</label>
+    <label>API URL</label>
     <input type="text" id="apiUrl" value="http://127.0.0.1:8000" placeholder="http://127.0.0.1:8000">
   </div>
 
-  <!-- Tab nav -->
   <nav class="tab-nav">
-    <button class="tab-btn active" data-tab="info">📝 Informações</button>
-    <button class="tab-btn" data-tab="combate">⚔️ Combate & Perícias</button>
-    <button class="tab-btn" data-tab="ataques">🎒 Ataques & Equipamento</button>
-    <button class="tab-btn" data-tab="personalidade">💬 Personalidade</button>
-    <button class="tab-btn" data-tab="historia">📖 Aparência & Histórico</button>
-    <button class="tab-btn" data-tab="magias">✨ Magias</button>
+    <button class="tab-btn active" data-tab="info">📝 Info</button>
+    <button class="tab-btn" data-tab="combate">⚔️ Combat & Skills</button>
+    <button class="tab-btn" data-tab="ataques">🎒 Attacks & Gear</button>
+    <button class="tab-btn" data-tab="personalidade">💬 Personality</button>
+    <button class="tab-btn" data-tab="historia">📖 Appearance & Backstory</button>
+    <button class="tab-btn" data-tab="magias">✨ Spells</button>
   </nav>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 1 — INFORMAÇÕES
-  ════════════════════════════════════════════════════ -->
   <div class="parchment active" id="tab-info">
-    <div class="section-title">Identificação do Personagem</div>
+    <div class="section-title">Character Identification</div>
     <div class="grid-3">
-      <div class="field"><label>Nome do Personagem *</label><input type="text" id="nome_personagem" placeholder="ex.: Aldric Pedraforte"></div>
-      <div class="field"><label>Classe e Nível</label><input type="text" id="classe_nivel" placeholder="ex.: Guerreiro 5"></div>
-      <div class="field"><label>Antecedente</label><input type="text" id="antecedente" placeholder="ex.: Soldado"></div>
-      <div class="field"><label>Nome do Jogador</label><input type="text" id="nome_jogador"></div>
-      <div class="field"><label>Raça</label><input type="text" id="raca" placeholder="ex.: Humano"></div>
-      <div class="field"><label>Alinhamento</label><input type="text" id="alinhamento" placeholder="ex.: Leal e Bom"></div>
+      <div class="field"><label>Character Name *</label><input type="text" id="nome_personagem" placeholder="e.g.: Aldric Stoneheart"></div>
+      <div class="field"><label>Class & Level</label><input type="text" id="classe_nivel" placeholder="e.g.: Fighter 5"></div>
+      <div class="field"><label>Background</label><input type="text" id="antecedente" placeholder="e.g.: Soldier"></div>
+      <div class="field"><label>Player Name</label><input type="text" id="nome_jogador"></div>
+      <div class="field"><label>Race</label><input type="text" id="raca" placeholder="e.g.: Human"></div>
+      <div class="field"><label>Alignment</label><input type="text" id="alinhamento" placeholder="e.g.: Lawful Good"></div>
     </div>
     <div class="grid-3" style="margin-top:1rem">
-      <div class="field"><label>Pontos de Experiência</label><input type="number" id="experiencia" value="0" min="0"></div>
+      <div class="field"><label>Experience Points (XP)</label><input type="number" id="experiencia" value="0" min="0"></div>
       <div class="field" style="justify-content:flex-end">
-        <label class="check-field"><input type="checkbox" id="inspiracao"> <span>✦ Inspiração</span></label>
+        <label class="check-field"><input type="checkbox" id="inspiracao"> <span>✦ Inspiration</span></label>
       </div>
-      <div class="field"><label>Bônus de Proficiência</label>
+      <div class="field"><label>Proficiency Bonus</label>
         <select id="bonus_proficiencia">
-          <option value="2">+2 (Níveis 1–4)</option>
-          <option value="3">+3 (Níveis 5–8)</option>
-          <option value="4">+4 (Níveis 9–12)</option>
-          <option value="5">+5 (Níveis 13–16)</option>
-          <option value="6">+6 (Níveis 17–20)</option>
+          <option value="2">+2 (Levels 1–4)</option>
+          <option value="3">+3 (Levels 5–8)</option>
+          <option value="4">+4 (Levels 9–12)</option>
+          <option value="5">+5 (Levels 13–16)</option>
+          <option value="6">+6 (Levels 17–20)</option>
         </select>
       </div>
     </div>
 
-    <div class="section-title">Atributos</div>
+    <div class="section-title">Attributes</div>
     <div class="grid-6" id="stats-grid">
-      <!-- gerado por JS -->
-    </div>
+      </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 2 — COMBATE & PERÍCIAS
-  ════════════════════════════════════════════════════ -->
   <div class="parchment" id="tab-combate">
-    <div class="section-title">Stats de Combate</div>
+    <div class="section-title">Combat Stats</div>
     <div class="grid-4">
       <div class="combat-stat">
-        <label>Classe de Armadura</label>
+        <label>Armor Class (AC)</label>
         <input type="number" id="classe_armadura" value="10" min="0">
       </div>
       <div class="combat-stat">
-        <label>Iniciativa</label>
+        <label>Initiative</label>
         <div class="auto-val" id="iniciativa_display">+0</div>
       </div>
       <div class="combat-stat">
-        <label>Deslocamento (m)</label>
-        <input type="number" id="deslocamento" value="9" min="0" step="1">
+        <label>Speed (ft)</label>
+        <input type="number" id="deslocamento" value="30" min="0" step="5">
       </div>
       <div class="combat-stat">
-        <label>Dado de Vida</label>
+        <label>Hit Dice</label>
         <input type="text" id="dado_vida" placeholder="1d10" style="font-size:1rem">
       </div>
     </div>
 
-    <div class="section-title">Pontos de Vida</div>
+    <div class="section-title">Hit Points (HP)</div>
     <div class="hp-row">
-      <div class="hp-box"><label>PV Máximo</label><input type="number" id="pv_maximo" value="10" min="0"></div>
-      <div class="hp-box"><label>PV Atuais</label><input type="number" id="pv_atuais" value="10" min="0"></div>
-      <div class="hp-box"><label>PV Temporários</label><input type="number" id="pv_temporarios" value="0" min="0"></div>
+      <div class="hp-box"><label>Max HP</label><input type="number" id="pv_maximo" value="10" min="0"></div>
+      <div class="hp-box"><label>Current HP</label><input type="number" id="pv_atuais" value="10" min="0"></div>
+      <div class="hp-box"><label>Temp HP</label><input type="number" id="pv_temporarios" value="0" min="0"></div>
     </div>
 
-    <div class="section-title">Salvaguardas</div>
+    <div class="section-title">Saving Throws</div>
     <div class="skill-grid" id="salv-grid">
-      <!-- gerado por JS -->
-    </div>
+      </div>
 
     <hr>
-    <div class="section-title">Perícias</div>
+    <div class="section-title">Skills</div>
     <div style="display:flex; align-items:center; gap:1rem; margin-bottom:.8rem; flex-wrap:wrap;">
       <div class="passive-box">
-        <span class="pp-label">Percepção Passiva</span>
+        <span class="pp-label">Passive Perception</span>
         <span class="pp-val" id="percepcao_passiva_display">10</span>
       </div>
     </div>
     <div class="skill-grid" id="skill-grid">
-      <!-- gerado por JS -->
-    </div>
+      </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 3 — ATAQUES & EQUIPAMENTO
-  ════════════════════════════════════════════════════ -->
   <div class="parchment" id="tab-ataques">
-    <div class="section-title">Ataques &amp; Conjuração</div>
+    <div class="section-title">Attacks &amp; Spellcasting</div>
     <div id="attacks-container">
-      <!-- gerado por JS -->
-    </div>
+      </div>
     <div class="field" style="margin-top:.5rem">
-      <label>Notas Adicionais de Ataques &amp; Conjuração</label>
+      <label>Additional Attack &amp; Casting Notes</label>
       <textarea id="ataques_conjuracao_extra" rows="3"></textarea>
     </div>
 
-    <div class="section-title">Equipamento</div>
+    <div class="section-title">Equipment</div>
     <div class="field">
-      <label>Itens, Armas, Armaduras, Dinheiro…</label>
-      <textarea id="equipamento" rows="5" placeholder="ex.: 10 PO, Espada Longa, Cota de Malha…"></textarea>
+      <label>Items, Weapons, Armor, Currency…</label>
+      <textarea id="equipamento" rows="5" placeholder="e.g.: 10 GP, Longsword, Chain Mail…"></textarea>
     </div>
 
-    <div class="section-title">Outras Proficiências &amp; Idiomas</div>
+    <div class="section-title">Other Proficiencies &amp; Languages</div>
     <div class="field">
-      <textarea id="outras_proficiencias" rows="4" placeholder="Armaduras leves, médias e pesadas; escudos; armas marciais…"></textarea>
+      <textarea id="outras_proficiencias" rows="4" placeholder="Light, medium, and heavy armor; shields; martial weapons; Common, Elvish…"></textarea>
     </div>
 
-    <div class="section-title">Características &amp; Talentos</div>
+    <div class="section-title">Features &amp; Traits</div>
     <div class="field">
-      <textarea id="caracteristicas_talentos" rows="5" placeholder="Características de classe, raciais e talentos…"></textarea>
+      <textarea id="caracteristicas_talentos" rows="5" placeholder="Class features, racial traits, feats…"></textarea>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 4 — PERSONALIDADE
-  ════════════════════════════════════════════════════ -->
   <div class="parchment" id="tab-personalidade">
-    <div class="section-title">Traços de Personalidade</div>
+    <div class="section-title">Personality Profile</div>
     <div class="grid-2">
-      <div class="field"><label>Traços de Personalidade</label><textarea id="tracos_personalidade" rows="4"></textarea></div>
-      <div class="field"><label>Ideais</label><textarea id="ideais" rows="4"></textarea></div>
-      <div class="field"><label>Vínculos</label><textarea id="vinculos" rows="4"></textarea></div>
-      <div class="field"><label>Fraquezas</label><textarea id="fraquezas" rows="4"></textarea></div>
+      <div class="field"><label>Personality Traits</label><textarea id="tracos_personalidade" rows="4"></textarea></div>
+      <div class="field"><label>Ideals</label><textarea id="ideais" rows="4"></textarea></div>
+      <div class="field"><label>Bonds</label><textarea id="vinculos" rows="4"></textarea></div>
+      <div class="field"><label>Flaws</label><textarea id="fraquezas" rows="4"></textarea></div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 5 — APARÊNCIA & HISTÓRICO
-  ════════════════════════════════════════════════════ -->
   <div class="parchment" id="tab-historia">
-    <div class="section-title">Aparência Física</div>
+    <div class="section-title">Physical Appearance</div>
     <div class="grid-3">
-      <div class="field"><label>Idade</label><input type="text" id="idade" placeholder="ex.: 28 anos"></div>
-      <div class="field"><label>Altura</label><input type="text" id="altura" placeholder="ex.: 1,80m"></div>
-      <div class="field"><label>Peso</label><input type="text" id="peso" placeholder="ex.: 80 kg"></div>
-      <div class="field"><label>Cor dos Olhos</label><input type="text" id="cor_olhos"></div>
-      <div class="field"><label>Cor da Pele</label><input type="text" id="cor_pele"></div>
-      <div class="field"><label>Cor do Cabelo</label><input type="text" id="cor_cabelo"></div>
+      <div class="field"><label>Age</label><input type="text" id="idade" placeholder="e.g.: 28 years"></div>
+      <div class="field"><label>Height</label><input type="text" id="altura" placeholder="e.g.: 6'0''"></div>
+      <div class="field"><label>Weight</label><input type="text" id="peso" placeholder="e.g.: 180 lbs"></div>
+      <div class="field"><label>Eyes</label><input type="text" id="cor_olhos"></div>
+      <div class="field"><label>Skin</label><input type="text" id="cor_pele"></div>
+      <div class="field"><label>Hair</label><input type="text" id="cor_cabelo"></div>
     </div>
 
-    <div class="section-title">Aliados &amp; Organizações</div>
-    <div class="field"><label>Nome da Organização / Aliado</label><input type="text" id="aliados_nome"></div>
-    <div class="field" style="margin-top:.6rem"><label>Descrição</label><textarea id="aliados_organizacoes" rows="3"></textarea></div>
+    <div class="section-title">Allies &amp; Organizations</div>
+    <div class="field"><label>Organization / Ally Name</label><input type="text" id="aliados_nome"></div>
+    <div class="field" style="margin-top:.6rem"><label>Description</label><textarea id="aliados_organizacoes" rows="3"></textarea></div>
 
-    <div class="section-title">História do Personagem</div>
-    <div class="field"><textarea id="historia_personagem" rows="6" placeholder="Backstory do personagem…"></textarea></div>
+    <div class="section-title">Character Backstory</div>
+    <div class="field"><textarea id="historia_personagem" rows="6" placeholder="Backstory of your character…"></textarea></div>
 
-    <div class="section-title">Tesouros</div>
-    <div class="field"><textarea id="tesouros" rows="3" placeholder="Itens mágicos, relíquias, riquezas notáveis…"></textarea></div>
+    <div class="section-title">Treasure</div>
+    <div class="field"><textarea id="tesouros" rows="3" placeholder="Magic items, relics, notable wealth…"></textarea></div>
 
-    <div class="section-title">Características &amp; Talentos Adicionais</div>
-    <div class="field"><textarea id="caract_talentos_adicionais" rows="3" placeholder="Outras características não listadas na página 1…"></textarea></div>
+    <div class="section-title">Additional Features &amp; Traits</div>
+    <div class="field"><textarea id="caract_talentos_adicionais" rows="3" placeholder="Other traits not listed on page 1…"></textarea></div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       ABA 6 — MAGIAS
-  ════════════════════════════════════════════════════ -->
   <div class="parchment" id="tab-magias">
-    <div class="section-title">Classe Conjuradora</div>
+    <div class="section-title">Spellcasting Class</div>
     <div class="grid-4">
-      <div class="field"><label>Classe Conjuradora</label><input type="text" id="classe_conjuradora" placeholder="ex.: Mago"></div>
-      <div class="field"><label>Atributo de Conjuração</label><input type="text" id="atributo_conjuracao" placeholder="ex.: Inteligência"></div>
-      <div class="field"><label>CD para Evitar Magias</label><input type="text" id="cd_magias" placeholder="ex.: 14"></div>
-      <div class="field"><label>Mod. de Ataque Mágico</label><input type="text" id="bonus_ataque_magico" placeholder="ex.: +6"></div>
+      <div class="field"><label>Spellcasting Class</label><input type="text" id="classe_conjuradora" placeholder="e.g.: Wizard"></div>
+      <div class="field"><label>Ability Modifier</label><input type="text" id="atributo_conjuracao" placeholder="e.g.: Intelligence"></div>
+      <div class="field"><label>Spell Save DC</label><input type="text" id="cd_magias" placeholder="e.g.: 14"></div>
+      <div class="field"><label>Spell Attack Bonus</label><input type="text" id="bonus_ataque_magico" placeholder="e.g.: +6"></div>
     </div>
   </div>
 
-  <!-- Generate button (always visible) -->
   <button class="btn-generate" id="btn-generate" onclick="gerarPDF()">
-    🎲 Gerar Ficha em PDF
+    🎲 Generate PDF Sheet
   </button>
 
 </div>
 
-<!-- Toast -->
 <div id="toast"></div>
 
 <script>
 // ─────────────────────────────────────────────────────────────────
-// Dados estáticos
+// Static Data (Translated labels)
 // ─────────────────────────────────────────────────────────────────
 const ATRIBUTOS = [
-  { id: 'forca',        label: 'Força' },
-  { id: 'destreza',     label: 'Destreza' },
-  { id: 'constituicao', label: 'Constituição' },
-  { id: 'inteligencia', label: 'Inteligência' },
-  { id: 'sabedoria',    label: 'Sabedoria' },
-  { id: 'carisma',      label: 'Carisma' },
+  { id: 'forca',        label: 'Strength' },
+  { id: 'destreza',     label: 'Dexterity' },
+  { id: 'constituicao', label: 'Constitution' },
+  { id: 'inteligencia', label: 'Intelligence' },
+  { id: 'sabedoria',    label: 'Wisdom' },
+  { id: 'carisma',      label: 'Charisma' },
 ];
 
 const SALVAGUARDAS = [
-  { label: 'Força',         chave: 'forca' },
-  { label: 'Destreza',      chave: 'destreza' },
-  { label: 'Constituição',  chave: 'constituicao' },
-  { label: 'Inteligência',  chave: 'inteligencia' },
-  { label: 'Sabedoria',     chave: 'sabedoria' },
-  { label: 'Carisma',       chave: 'carisma' },
+  { label: 'Strength',         chave: 'forca' },
+  { label: 'Dexterity',      chave: 'destreza' },
+  { label: 'Constitution',  chave: 'constituicao' },
+  { label: 'Intelligence',  chave: 'inteligencia' },
+  { label: 'Wisdom',     chave: 'sabedoria' },
+  { label: 'Charisma',       chave: 'carisma' },
 ];
 
 const PERICIAS = [
-  { label: 'Acrobacia',         chave: 'acrobacia',      attr: 'destreza' },
-  { label: 'Arcanismo',         chave: 'arcanismo',      attr: 'inteligencia' },
-  { label: 'Atletismo',         chave: 'atletismo',      attr: 'forca' },
-  { label: 'Atuação',           chave: 'atuacao',        attr: 'carisma' },
-  { label: 'Enganação',         chave: 'enganacao',      attr: 'carisma' },
-  { label: 'Furtividade',       chave: 'furtividade',    attr: 'destreza' },
-  { label: 'História',          chave: 'historia',       attr: 'inteligencia' },
-  { label: 'Intimidação',       chave: 'intimidacao',    attr: 'carisma' },
-  { label: 'Intuição',          chave: 'intuicao',       attr: 'sabedoria' },
-  { label: 'Investigação',      chave: 'investigacao',   attr: 'inteligencia' },
-  { label: 'Lidar c/ Animais',  chave: 'lidar_animais',  attr: 'sabedoria' },
-  { label: 'Medicina',          chave: 'medicina',       attr: 'sabedoria' },
-  { label: 'Natureza',          chave: 'natureza',       attr: 'inteligencia' },
-  { label: 'Percepção',         chave: 'percepcao',      attr: 'sabedoria' },
-  { label: 'Persuasão',         chave: 'persuasao',      attr: 'carisma' },
-  { label: 'Prestidigitação',   chave: 'prestidigitacao',attr: 'destreza' },
-  { label: 'Religião',          chave: 'religiao',       attr: 'inteligencia' },
-  { label: 'Sobrevivência',     chave: 'sobrevivencia',  attr: 'sabedoria' },
+  { label: 'Acrobatics',         chave: 'acrobacia',      attr: 'destreza' },
+  { label: 'Animal Handling',  chave: 'lidar_animais',  attr: 'sabedoria' },
+  { label: 'Arcana',         chave: 'arcanismo',      attr: 'inteligencia' },
+  { label: 'Athletics',         chave: 'atletismo',      attr: 'forca' },
+  { label: 'Deception',      chave: 'enganacao',      attr: 'carisma' },
+  { label: 'History',          chave: 'historia',       attr: 'inteligencia' },
+  { label: 'Insight',          chave: 'intuicao',       attr: 'sabedoria' },
+  { label: 'Intimidation',       chave: 'intimidacao',    attr: 'carisma' },
+  { label: 'Investigation',      chave: 'investigacao',   attr: 'inteligencia' },
+  { label: 'Medicine',          chave: 'medicina',       attr: 'sabedoria' },
+  { label: 'Nature',          chave: 'natureza',       attr: 'inteligencia' },
+  { label: 'Perception',         chave: 'percepcao',      attr: 'sabedoria' },
+  { label: 'Performance',           chave: 'atuacao',        attr: 'carisma' },
+  { label: 'Persuasion',         chave: 'persuasao',      attr: 'carisma' },
+  { label: 'Religion',          chave: 'religiao',       attr: 'inteligencia' },
+  { label: 'Sleight of Hand',   chave: 'prestidigitacao',attr: 'destreza' },
+  { label: 'Stealth',    chave: 'furtividade',    attr: 'destreza' },
+  { label: 'Survival',     chave: 'sobrevivencia',  attr: 'sabedoria' },
 ];
 
 // ─────────────────────────────────────────────────────────────────
-// Utilitários
+// Utils
 // ─────────────────────────────────────────────────────────────────
 const mod = score => Math.floor((score - 10) / 2);
 const fmt = m => (m >= 0 ? `+${m}` : `${m}`);
@@ -817,7 +791,7 @@ function buildStatBoxes() {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Build salvaguarda rows
+// Build saving throw rows
 // ─────────────────────────────────────────────────────────────────
 function buildSalvGuardas() {
   const grid = document.getElementById('salv-grid');
@@ -832,11 +806,11 @@ function buildSalvGuardas() {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Build perícia rows
+// Build skill rows
 // ─────────────────────────────────────────────────────────────────
 function buildPericias() {
   const grid = document.getElementById('skill-grid');
-  const ATTR_ABBR = { forca:'For', destreza:'Des', constituicao:'Con', inteligencia:'Int', sabedoria:'Sab', carisma:'Car' };
+  const ATTR_ABBR = { forca:'STR', destreza:'DEX', constituicao:'CON', inteligencia:'INT', sabedoria:'WIS', carisma:'CHA' };
   PERICIAS.forEach(p => {
     grid.innerHTML += `
       <div class="skill-row">
@@ -856,19 +830,19 @@ function buildAttacks() {
   for (let i = 1; i <= 3; i++) {
     c.innerHTML += `
       <div class="attack-row">
-        <span class="attack-num">Ataque ${i}</span>
-        <div class="field"><label>Nome</label>
-          <input type="text" id="ataque${i}_nome" placeholder="ex.: Espada Longa"></div>
-        <div class="field"><label>Bônus</label>
+        <span class="attack-num">Attack ${i}</span>
+        <div class="field"><label>Name</label>
+          <input type="text" id="ataque${i}_nome" placeholder="e.g.: Longsword"></div>
+        <div class="field"><label>Bonus</label>
           <input type="text" id="ataque${i}_bonus" placeholder="+5"></div>
-        <div class="field"><label>Dano / Tipo</label>
-          <input type="text" id="ataque${i}_dano" placeholder="1d8+3 cortante"></div>
+        <div class="field"><label>Damage / Type</label>
+          <input type="text" id="ataque${i}_dano" placeholder="1d8+3 slashing"></div>
       </div>`;
   }
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Recalcular modificadores, salvaguardas, perícias
+// Recalculate modifiers, saves, skills
 // ─────────────────────────────────────────────────────────────────
 function recalcular() {
   const bp = Number(document.getElementById('bonus_proficiencia').value) || 2;
@@ -881,11 +855,11 @@ function recalcular() {
     if (el) el.textContent = fmt(mods[a.id]);
   });
 
-  // Iniciativa
+  // Initiative
   const initEl = document.getElementById('iniciativa_display');
   if (initEl) initEl.textContent = fmt(mods.destreza || 0);
 
-  // Salvaguardas
+  // Saving Throws
   SALVAGUARDAS.forEach(s => {
     const prof = document.getElementById(`salv_${s.chave}_prof`)?.checked;
     const total = (mods[s.chave] || 0) + (prof ? bp : 0);
@@ -893,7 +867,7 @@ function recalcular() {
     if (el) el.textContent = fmt(total);
   });
 
-  // Perícias
+  // Skills
   PERICIAS.forEach(p => {
     const prof = document.getElementById(`${p.chave}_prof`)?.checked;
     const total = (mods[p.attr] || 0) + (prof ? bp : 0);
@@ -901,7 +875,7 @@ function recalcular() {
     if (el) el.textContent = fmt(total);
   });
 
-  // Percepção passiva
+  // Passive Perception
   const percEl = document.getElementById('percepcao_prof');
   const percProf = percEl ? percEl.checked : false;
   const pp = 10 + (mods.sabedoria || 0) + (percProf ? bp : 0);
@@ -932,7 +906,7 @@ function toast(msg, isError = false) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Montar payload
+// Build Payload
 // ─────────────────────────────────────────────────────────────────
 function montarPayload() {
   const bp = Number(document.getElementById('bonus_proficiencia').value);
@@ -953,7 +927,7 @@ function montarPayload() {
     sabedoria:          val('sabedoria') || 10,
     carisma:            val('carisma') || 10,
     classe_armadura:    val('classe_armadura') || 10,
-    deslocamento:       val('deslocamento') || 9,
+    deslocamento:       val('deslocamento') || 30,
     dado_vida:          val('dado_vida'),
     pv_maximo:          val('pv_maximo') || 0,
     pv_atuais:          val('pv_atuais') || 0,
@@ -976,7 +950,7 @@ function montarPayload() {
   const textos = [
     'ataques_conjuracao_extra','equipamento','outras_proficiencias','caracteristicas_talentos',
     'tracos_personalidade','ideais','vinculos','fraquezas',
-    'idade','altura','peso','cor_olhos','cor_pele','cor_cabelo',
+    'idade','altura','weight','cor_olhos','cor_pele','cor_cabelo',
     'aliados_nome','aliados_organizacoes','historia_personagem','tesouros','caract_talentos_adicionais',
     'classe_conjuradora','atributo_conjuracao','cd_magias','bonus_ataque_magico',
   ];
@@ -986,13 +960,12 @@ function montarPayload() {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Gerar PDF
+// Generate PDF
 // ─────────────────────────────────────────────────────────────────
 async function gerarPDF() {
   const nome = document.getElementById('nome_personagem').value.trim();
   if (!nome) {
-    toast('⚠ Preencha o nome do personagem!', true);
-    // Volta para aba de informações
+    toast('⚠ Please enter the character name!', true);
     document.querySelector('[data-tab="info"]').click();
     return;
   }
@@ -1000,7 +973,7 @@ async function gerarPDF() {
   const baseUrl = document.getElementById('apiUrl').value.replace(/\/$/, '');
   const btn = document.getElementById('btn-generate');
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span> Gerando…';
+  btn.innerHTML = '<span class="spinner"></span> Generating…';
 
   try {
     const resp = await fetch(`${baseUrl}/ficha/gerar-pdf`, {
@@ -1011,24 +984,24 @@ async function gerarPDF() {
 
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({ detail: resp.statusText }));
-      throw new Error(err.detail || `Erro ${resp.status}`);
+      throw new Error(err.detail || `Error ${resp.status}`);
     }
 
     const blob = await resp.blob();
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `ficha_${nome.replace(/\s+/g, '_').toLowerCase()}.pdf`;
+    a.download = `sheet_${nome.replace(/\s+/g, '_').toLowerCase()}.pdf`;
     a.click();
     URL.revokeObjectURL(url);
 
-    toast('✅ PDF gerado com sucesso!');
+    toast('✅ PDF generated successfully!');
   } catch (e) {
     toast(`❌ ${e.message}`, true);
     console.error(e);
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '🎲 Gerar Ficha em PDF';
+    btn.innerHTML = '🎲 Generate PDF Sheet';
   }
 }
 
